@@ -1,0 +1,22 @@
+well_id,well_name,field,basin,latitude,longitude,target_depth_m,status,spud_date,completion_date
+15_9-23,Regional-9-23,Regional Assam Offset,Upper Assam Shelf,26.847,95.321,3500.0,Offset Reference,2021-04-15,2021-08-20
+16_2-7,Regional-2-7,Regional Assam Offset,Upper Assam Shelf,26.852,95.335,3450.0,Producing,2021-04-15,2021-08-20
+34_10_16,Regional-16,Regional Assam Offset,Upper Assam Shelf,26.84,95.31,3520.0,Offset Reference,2021-04-15,2021-08-20
+DIG_04,Digboi-04,Digboi Field,Upper Assam Shelf,27.382,95.62,3100.0,Producing,2021-04-15,2021-08-20
+DIG_11,Digboi-11,Digboi Field,Upper Assam Shelf,27.393,95.632,3150.0,Producing,2021-04-15,2021-08-20
+DIG_19,Digboi-19,Digboi Field,Upper Assam Shelf,27.377,95.615,3200.0,Producing,2021-04-15,2021-08-20
+DUL_104,Duliajan-104,Duliajan Field,Upper Assam Shelf,26.857,95.34,3510.0,Producing,2021-04-15,2021-08-20
+DUL_88,Duliajan-88,Duliajan Field,Upper Assam Shelf,26.851,95.315,3400.0,Producing,2021-04-15,2021-08-20
+DUL_92,Duliajan-92,Duliajan Field,Upper Assam Shelf,26.844,95.328,3480.0,Producing,2021-04-15,2021-08-20
+DUL_99,Duliajan-99,Duliajan Field,Upper Assam Shelf,26.832,95.305,3550.0,Producing,2021-04-15,2021-08-20
+JOR_03,Jorhat-03,Jorhat Field,Upper Assam Shelf,26.752,94.2,3250.0,Offset Reference,2021-04-15,2021-08-20
+MOR_12,Moran-12,Moran Field,Upper Assam Shelf,27.182,94.92,3350.0,Offset Reference,2021-04-15,2021-08-20
+MOR_18,Moran-18,Moran Field,Upper Assam Shelf,27.194,94.935,3400.0,Offset Reference,2021-04-15,2021-08-20
+MOR_25,Moran-25,Moran Field,Upper Assam Shelf,27.177,94.91,3380.0,Offset Reference,2021-04-15,2021-08-20
+NHK_45,Naharkatiya-45,Naharkatiya Field,Upper Assam Shelf,27.282,95.35,3420.0,Producing,2021-04-15,2021-08-20
+NHK_52,Naharkatiya-52,Naharkatiya Field,Upper Assam Shelf,27.297,95.365,3460.0,Producing,2021-04-15,2021-08-20
+NHK_61,Naharkatiya-61,Naharkatiya Field,Upper Assam Shelf,27.272,95.342,3500.0,Producing,2021-04-15,2021-08-20
+RUD_08,Rudrasagar-08,Rudrasagar Field,Upper Assam Shelf,26.912,94.61,3300.0,Offset Reference,2021-04-15,2021-08-20
+RUD_15,Rudrasagar-15,Rudrasagar Field,Upper Assam Shelf,26.927,94.625,3340.0,Offset Reference,2021-04-15,2021-08-20
+RUD_22,Rudrasagar-22,Rudrasagar Field,Upper Assam Shelf,26.9,94.595,3360.0,Offset Reference,2021-04-15,2021-08-20
+SIB_07,Sibsagar-07,Sibsagar Field,Upper Assam Shelf,26.982,94.63,3400.0,Producing,2021-04-15,2021-08-20

@@ -1,0 +1,3 @@
+well_id,job_id,depth,cement_type,cement_volume,pressure,result,job_date,remarks,source_document,data_status
+DUL_99,CEM-DUL99-01,3210.0,Class-G Thixotropic Cement Plug,35 bbl,1850.0,Success - Returns Restored,2023-01-15,Placed 35 bbl Class-G cement plug across 3200m-3210m interval for total loss in Sylhet limestone. 12-hr set time.,03_DUL99_Lost_Circulation_Complete.pdf,SOURCE_EXTRACTED
+DUL_92,CEM-DUL92-01,1800.0,Class-G Cement Slurry,65 bbl,2400.0,Success - Shoe Cementing Completed,2022-11-10,Cemented 9-5/8 in casing shoe across Barail group top at 1800m.,01_DUL92_Stuck_Pipe_Complete.pdf,SOURCE_EXTRACTED

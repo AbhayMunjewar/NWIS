@@ -1,0 +1,8 @@
+well_id,casing_size,setting_depth,grade,weight,shoe_depth,source_document,data_status
+DUL_92,20 in,80.0,K-55,94 lb/ft,80.0,01_DUL92_Stuck_Pipe_Complete.pdf,SOURCE_EXTRACTED
+DUL_92,13-3/8 in,800.0,L-80,68 lb/ft,800.0,01_DUL92_Stuck_Pipe_Complete.pdf,SOURCE_EXTRACTED
+DUL_92,9-5/8 in,1800.0,N-80,47 lb/ft,1800.0,01_DUL92_Stuck_Pipe_Complete.pdf,SOURCE_EXTRACTED
+DUL_92,7 in Liner,3520.0,P-110,29 lb/ft,3520.0,01_DUL92_Stuck_Pipe_Complete.pdf,SOURCE_EXTRACTED
+DUL_88,8.5 in Hole,2842.0,P-110,29 lb/ft,2842.0,02_DUL88_Gas_Kick_Complete.pdf,SOURCE_EXTRACTED
+DUL_99,8.5 in Hole,3210.0,P-110,29 lb/ft,3210.0,03_DUL99_Lost_Circulation_Complete.pdf,SOURCE_EXTRACTED
+DUL_104,12.25 in Hole,2120.0,L-80,68 lb/ft,2120.0,04_DUL104_Current_Drilling_Complete.pdf,SOURCE_EXTRACTED

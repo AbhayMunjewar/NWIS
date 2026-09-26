@@ -1,0 +1,125 @@
+well_id,formation_name,top_depth,bottom_depth,lithology,data_status
+15_9-23,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+15_9-23,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+15_9-23,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+15_9-23,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+15_9-23,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+15_9-23,Sylhet Limestone,3200.0,3500.0,Limestone / Karst,DERIVED
+16_2-7,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+16_2-7,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+16_2-7,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+16_2-7,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+16_2-7,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+16_2-7,Sylhet Limestone,3200.0,3450.0,Limestone / Karst,DERIVED
+34_10_16,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+34_10_16,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+34_10_16,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+34_10_16,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+34_10_16,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+34_10_16,Sylhet Limestone,3200.0,3520.0,Limestone / Karst,DERIVED
+DIG_04,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DIG_04,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DIG_04,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DIG_04,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DIG_04,Kopili Formation,2500.0,3100.0,Overpressured Shale,DERIVED
+DIG_11,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DIG_11,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DIG_11,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DIG_11,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DIG_11,Kopili Formation,2500.0,3150.0,Overpressured Shale,DERIVED
+DIG_19,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DIG_19,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DIG_19,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DIG_19,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DIG_19,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+DIG_19,Sylhet Limestone,3200.0,3200.0,Limestone / Karst,DERIVED
+DUL_104,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DUL_104,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DUL_104,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DUL_104,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DUL_104,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+DUL_104,Sylhet Limestone,3200.0,3510.0,Limestone / Karst,DERIVED
+DUL_88,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DUL_88,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DUL_88,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DUL_88,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DUL_88,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+DUL_88,Sylhet Limestone,3200.0,3400.0,Limestone / Karst,DERIVED
+DUL_92,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DUL_92,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DUL_92,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DUL_92,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DUL_92,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+DUL_92,Sylhet Limestone,3200.0,3480.0,Limestone / Karst,DERIVED
+DUL_99,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+DUL_99,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+DUL_99,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+DUL_99,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+DUL_99,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+DUL_99,Sylhet Limestone,3200.0,3550.0,Limestone / Karst,DERIVED
+JOR_03,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+JOR_03,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+JOR_03,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+JOR_03,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+JOR_03,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+JOR_03,Sylhet Limestone,3200.0,3250.0,Limestone / Karst,DERIVED
+MOR_12,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+MOR_12,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+MOR_12,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+MOR_12,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+MOR_12,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+MOR_12,Sylhet Limestone,3200.0,3350.0,Limestone / Karst,DERIVED
+MOR_18,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+MOR_18,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+MOR_18,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+MOR_18,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+MOR_18,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+MOR_18,Sylhet Limestone,3200.0,3400.0,Limestone / Karst,DERIVED
+MOR_25,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+MOR_25,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+MOR_25,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+MOR_25,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+MOR_25,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+MOR_25,Sylhet Limestone,3200.0,3380.0,Limestone / Karst,DERIVED
+NHK_45,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+NHK_45,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+NHK_45,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+NHK_45,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+NHK_45,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+NHK_45,Sylhet Limestone,3200.0,3420.0,Limestone / Karst,DERIVED
+NHK_52,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+NHK_52,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+NHK_52,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+NHK_52,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+NHK_52,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+NHK_52,Sylhet Limestone,3200.0,3460.0,Limestone / Karst,DERIVED
+NHK_61,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+NHK_61,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+NHK_61,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+NHK_61,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+NHK_61,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+NHK_61,Sylhet Limestone,3200.0,3500.0,Limestone / Karst,DERIVED
+RUD_08,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+RUD_08,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+RUD_08,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+RUD_08,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+RUD_08,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+RUD_08,Sylhet Limestone,3200.0,3300.0,Limestone / Karst,DERIVED
+RUD_15,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+RUD_15,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+RUD_15,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+RUD_15,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+RUD_15,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+RUD_15,Sylhet Limestone,3200.0,3340.0,Limestone / Karst,DERIVED
+RUD_22,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+RUD_22,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+RUD_22,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+RUD_22,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+RUD_22,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+RUD_22,Sylhet Limestone,3200.0,3360.0,Limestone / Karst,DERIVED
+SIB_07,Tipam Sandstone,0.0,799.75,Sandstone,DERIVED
+SIB_07,Girujan Clay,800.0,1499.75,Shale / Claystone,DERIVED
+SIB_07,Namsang Formation,1500.0,1799.75,Interbedded Sand/Shale,DERIVED
+SIB_07,Barail Group,1800.0,2499.75,Reactive Shale,DERIVED
+SIB_07,Kopili Formation,2500.0,3199.75,Overpressured Shale,DERIVED
+SIB_07,Sylhet Limestone,3200.0,3400.0,Limestone / Karst,DERIVED

@@ -1,0 +1,225 @@
+import os
+import shutil
+import json
+import glob
+
+root = r"c:\drill_well"
+syn_dir = os.path.join(root, "data", "synthetic")
+
+print("Cleaning up redundant duplicate files in data/synthetic...")
+
+# Remove duplicate 19.2MB CSVs and duplicate PDFs in synthetic folder
+if os.path.exists(syn_dir):
+    shutil.rmtree(syn_dir)
+    print("Removed duplicate data/synthetic folder.")
+
+# Re-create lightweight data/synthetic folder structure with symbolic / lightweight references if needed
+os.makedirs(syn_dir, exist_ok=True)
+with open(os.path.join(syn_dir, "README.md"), "w") as f:
+    f.write("# Synthetic Data Directory\nAll processed synthetic/demo datasets are consolidated cleanly in `data/processed/` and documented in `data/metadata/dataset_registry.json`.\n")
+
+# Remove duplicate PDF files at root if present
+root_pdfs_to_remove = [
+    "01_DUL92_Stuck_Pipe_Complete.pdf",
+    "02_DUL88_Gas_Kick_Complete.pdf",
+    "03_DUL99_Lost_Circulation_Complete.pdf",
+    "04_DUL104_Current_Drilling_Complete.pdf",
+    "05_Assam_Basin_Geology_NWIS_Context_Complete.pdf",
+    "56cd75b282a2ema.pdf",
+    "Amendment- Policy for GEO-SCIENTIFIC DATA GENERATION for HYDROCARBONS in Indian sedimentary Basins and Agreement to carry out Non-exclusive Multi-Client Geo-scientific surveys-Activities.pdf"
+]
+
+for pdf in root_pdfs_to_remove:
+    path = os.path.join(root, pdf)
+    if os.path.exists(path):
+        os.remove(path)
+        print(f"Removed duplicate root PDF: {pdf}")
+
+# Update dataset_registry.json to point directly to data/processed & data/raw
+reg_path = os.path.join(root, "data", "metadata", "dataset_registry.json")
+
+dataset_registry = {
+    "project_name": "eRTMAC-NWIS decision support platform",
+    "target_organization": "Oil India Limited (OIL)",
+    "target_basin": "Upper Assam Shelf Basin",
+    "last_updated": "2026-09-26",
+    "clean_architecture": "Strict non-redundant layout",
+    "datasets": [
+        {
+            "dataset": "wells_master",
+            "file": "data/processed/wells_master.csv",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Master catalog of all 21 wells across 7 OIL Assam fields with surface lat/long, target depth, spud and completion dates.",
+            "row_count": 21,
+            "unique_wells": 21,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "formations",
+            "file": "data/processed/formations.csv",
+            "source_type": "DERIVED",
+            "status": "AVAILABLE",
+            "description": "Assam geological formation tops, bottom depths, and lithology derived from continuous wireline depth logs.",
+            "row_count": 124,
+            "unique_wells": 21,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "formation_reference",
+            "file": "data/processed/formation_reference.csv",
+            "source_type": "SOURCE_EXTRACTED",
+            "status": "AVAILABLE",
+            "description": "Reference geological guide listing Upper Assam formations, descriptions, pressure windows, hazards, and normalized aliases.",
+            "row_count": 6,
+            "unique_wells": 0,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "well_logs",
+            "file": "dataset 1/*.csv",
+            "source_type": "DERIVED",
+            "status": "AVAILABLE",
+            "description": "21 high-resolution well log CSVs containing GR, RHOB, NPHI, DTC, RDEP, CALI, BS, ROP, MUDWEIGHT, and drilling parameters.",
+            "row_count": 258903,
+            "unique_wells": 21,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "well_trajectory",
+            "file": "data/processed/well_trajectory.csv",
+            "source_type": "DERIVED",
+            "status": "AVAILABLE",
+            "description": "3D spatial directional trajectory points (MD, X, Y, Z, TVD) with mathematically derived inclination and azimuth angles.",
+            "row_count": 284101,
+            "unique_wells": 21,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "drilling_parameters",
+            "file": "data/processed/drilling_parameters.csv",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Rig sensor time-series containing ROP, WOB, Torque, RPM, SPP, Flow rates, Mud weight, Pit gain, Gas units, and hazard labels.",
+            "row_count": 1200,
+            "unique_wells": 4,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "drilling_events",
+            "file": "data/processed/drilling_events.csv",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Structured historical NPT hazard incidents database detailing Stuck Pipe, Gas Kick, Mud Loss, and High Torque events.",
+            "row_count": 5,
+            "unique_wells": 5,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "casing_records",
+            "file": "data/processed/casing_records.csv",
+            "source_type": "SOURCE_EXTRACTED",
+            "status": "AVAILABLE",
+            "description": "Casing sizes, API steel grades (K-55 to P-110), weights, setting depths, and shoe depths extracted from PDF technical reports.",
+            "row_count": 7,
+            "unique_wells": 4,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "cementing_records",
+            "file": "data/processed/cementing_records.csv",
+            "source_type": "SOURCE_EXTRACTED",
+            "status": "AVAILABLE",
+            "description": "Cementing job records detailing Class-G cement slurries, volumes, surface pressures (1850-2400 psi), set times, and squeeze results.",
+            "row_count": 2,
+            "unique_wells": 2,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "mud_program",
+            "file": "data/processed/mud_program.csv",
+            "source_type": "SOURCE_EXTRACTED",
+            "status": "AVAILABLE",
+            "description": "Mud weight profiles, Marsh funnel viscosity (49-58 sec/qt), fluid types, and loss control material (LCM) blends.",
+            "row_count": 156,
+            "unique_wells": 21,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "current_well_stream",
+            "file": "data/processed/current_well_stream.csv",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Minute-by-minute streaming telemetry dataset with derived hookload (137-430 klbs) formatted for live WebSocket demonstration.",
+            "row_count": 1200,
+            "unique_wells": 5,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "indian_well_statistics",
+            "file": "data/processed/indian_well_statistics.csv",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "15-fiscal-year (2010-2025) historical basin statistics across 7 OIL Assam fields with NPT days and financial losses in INR.",
+            "row_count": 105,
+            "unique_wells": 0,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "WCR documents",
+            "file": "data/raw/documents/wcr/*.pdf",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Well Completion Reports for DUL-92, DUL-88, and DUL-99 detailing hazard incidents and fix recipes.",
+            "file_count": 3,
+            "unique_wells": 3,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "DDR documents",
+            "file": "data/raw/documents/ddr/*.pdf",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Daily Drilling Reports for DUL-104 with 24-hour log and elevated torque anomaly warnings.",
+            "file_count": 2,
+            "unique_wells": 1,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "incident reports",
+            "file": "data/raw/documents/incident_reports/*.pdf",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "Structured RAG incident knowledge packs for Stuck Pipe, Gas Kick, and Mud Loss events.",
+            "file_count": 3,
+            "unique_wells": 3,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "research papers",
+            "file": "data/raw/research/drilling_research_papers/*.pdf",
+            "source_type": "SYNTHETIC",
+            "status": "AVAILABLE",
+            "description": "SPE Geomechanical technical research paper on Upper Assam Shelf pore pressures and borehole stability.",
+            "file_count": 2,
+            "unique_wells": 0,
+            "last_checked": "2026-09-26"
+        },
+        {
+            "dataset": "OIL reference documents",
+            "file": "data/raw/oil_reference/oil_tender_documents/*.pdf",
+            "source_type": "PUBLIC",
+            "status": "AVAILABLE",
+            "description": "Official 41-page Government Directorate General of Hydrocarbons (DGH) OALP policy document.",
+            "file_count": 1,
+            "unique_wells": 0,
+            "last_checked": "2026-09-26"
+        }
+    ]
+}
+
+with open(reg_path, "w", encoding="utf-8") as f:
+    json.dump(dataset_registry, f, indent=2)
+
+print("Updated data/metadata/dataset_registry.json cleanly.")
+print("Cleanup complete!")
