@@ -1,56 +1,106 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Sidebar, { type ViewId } from './components/Sidebar';
-import CommandCenterView from './components/views/CommandCenterView';
-import GISMapView from './components/views/GISMapView';
-import DrillingParametersView from './components/views/DrillingParametersView';
-import HazardDetectorView from './components/views/HazardDetectorView';
-import IncidentExplorerView from './components/views/IncidentExplorerView';
-import WellComparisonView from './components/views/WellComparisonView';
-import GeologyView from './components/views/GeologyView';
-import DocumentsView from './components/views/DocumentsView';
-import AICopilotView from './components/views/AICopilotView';
-import DataSourcesView from './components/views/DataSourcesView';
-import AdminView from './components/views/AdminView';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './lib/auth';
+import { CurrentWellProvider } from './lib/wellContext';
+import { ProtectedRoute } from './components/layout/ProtectedRoute';
+import { AppShell } from './components/layout/AppShell';
 
-const App: React.FC = () => {
-  const [activeView, setActiveView] = useState<ViewId>('command');
-  const [activeWellId, setActiveWellId] = useState('DUL_104');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+import { LandingPage } from './pages/LandingPage';
+import { OperationsDashboard } from './pages/OperationsDashboard';
+import { GisMapDashboard } from './pages/GisMapDashboard';
+import { LiveDrillingDashboard } from './pages/LiveDrillingDashboard';
+import { RiskAlertsDashboard } from './pages/RiskAlertsDashboard';
+import { HistoricalWellsDashboard } from './pages/HistoricalWellsDashboard';
+import { AiAssistantDashboard } from './pages/AiAssistantDashboard';
+import { ReportsWorkspace } from './pages/ReportsWorkspace';
 
-  const renderView = () => {
-    switch (activeView) {
-      case 'command': return <CommandCenterView />;
-      case 'map': return <GISMapView />;
-      case 'parameters': return <DrillingParametersView />;
-      case 'hazards': return <HazardDetectorView />;
-      case 'incidents': return <IncidentExplorerView />;
-      case 'comparison': return <WellComparisonView />;
-      case 'geology': return <GeologyView />;
-      case 'documents': return <DocumentsView />;
-      case 'copilot': return <AICopilotView />;
-      case 'datasources': return <DataSourcesView />;
-      case 'admin': return <AdminView />;
-      default: return <CommandCenterView />;
-    }
-  };
-
+export const App: React.FC = () => {
   return (
-    <div className="app-shell">
-      <Navbar activeWellId={activeWellId} setActiveWellId={setActiveWellId} />
-      <div className="app-layout">
-        <Sidebar
-          activeView={activeView}
-          setActiveView={setActiveView}
-          collapsed={sidebarCollapsed}
-          setCollapsed={setSidebarCollapsed}
-        />
-        <main className="main-content" id="main-content">
-          {renderView()}
-        </main>
-      </div>
-    </div>
+    <AuthProvider>
+      <CurrentWellProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* Single Combined Public Landing & Entity Login Page Route */}
+            <Route path="/" element={<LandingPage />} />
+
+            {/* Redirect legacy /login route to single main Landing Page */}
+            <Route path="/login" element={<Navigate to="/" replace />} />
+
+            {/* Protected NWIS Application Shell Routes */}
+            <Route element={<AppShell />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute dashboardKey="dashboard">
+                    <OperationsDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              
+              <Route
+                path="/map"
+                element={
+                  <ProtectedRoute dashboardKey="map">
+                    <GisMapDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              
+              <Route
+                path="/live"
+                element={
+                  <ProtectedRoute dashboardKey="live">
+                    <LiveDrillingDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              
+              <Route
+                path="/alerts"
+                element={
+                  <ProtectedRoute dashboardKey="alerts">
+                    <RiskAlertsDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              
+              <Route
+                path="/historical"
+                element={
+                  <ProtectedRoute dashboardKey="historical">
+                    <HistoricalWellsDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/wells" element={<Navigate to="/historical" replace />} />
+              
+              <Route
+                path="/assistant"
+                element={
+                  <ProtectedRoute dashboardKey="assistant">
+                    <AiAssistantDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              
+              <Route
+                path="/reports"
+                element={
+                  <ProtectedRoute dashboardKey="reports">
+                    <ReportsWorkspace />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
+
+            {/* Catch-all redirect to Landing Page */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </BrowserRouter>
+      </CurrentWellProvider>
+    </AuthProvider>
   );
 };
 
 export default App;
+
