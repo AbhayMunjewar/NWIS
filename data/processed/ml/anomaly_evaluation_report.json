@@ -1,0 +1,213 @@
+{
+  "multivariate_model": {
+    "algorithm": "IsolationForest",
+    "features": [
+      "ROP",
+      "WOB_Klbs",
+      "TORQUE_kNm",
+      "SPP_psi",
+      "RPM",
+      "GR",
+      "RHOB",
+      "CALI"
+    ],
+    "sample_count": 284101,
+    "contamination": 0.08,
+    "score_min": 0.3824,
+    "score_max": 0.7186,
+    "score_mean": 0.4635
+  },
+  "torque_model": {
+    "algorithm": "IsolationForest",
+    "features": [
+      "TORQUE_kNm",
+      "RPM",
+      "WOB_Klbs",
+      "DEPTH_MD"
+    ],
+    "sample_count": 284101
+  },
+  "rop_model": {
+    "algorithm": "IsolationForest",
+    "features": [
+      "ROP",
+      "WOB_Klbs",
+      "RPM",
+      "BS",
+      "DEPTH_MD"
+    ],
+    "sample_count": 284101
+  },
+  "retrospective_event_overlap_evaluation": [
+    {
+      "incident_id": "INC-DUL92-01",
+      "well_id": "DUL_92",
+      "hazard_type": "Stuck Pipe",
+      "depth_m": 2210.0,
+      "window_max_anomaly_score": 0.6978,
+      "window_mean_anomaly_score": 0.5914,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-DUL88-01",
+      "well_id": "DUL_88",
+      "hazard_type": "Gas Kick",
+      "depth_m": 2842.0,
+      "window_max_anomaly_score": 0.5834,
+      "window_mean_anomaly_score": 0.4741,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-DUL99-01",
+      "well_id": "DUL_99",
+      "hazard_type": "Mud Loss",
+      "depth_m": 3210.0,
+      "window_max_anomaly_score": 0.66,
+      "window_mean_anomaly_score": 0.5219,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-MOR12-01",
+      "well_id": "MOR_12",
+      "hazard_type": "High Torque",
+      "depth_m": 2185.0,
+      "window_max_anomaly_score": 0.6999,
+      "window_mean_anomaly_score": 0.5676,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-NHK45-01",
+      "well_id": "NHK_45",
+      "hazard_type": "Gas Influx",
+      "depth_m": 2790.0,
+      "window_max_anomaly_score": 0.5757,
+      "window_mean_anomaly_score": 0.4434,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-DIG04-01",
+      "well_id": "DIG_04",
+      "hazard_type": "Mud Loss",
+      "depth_m": 1450.0,
+      "window_max_anomaly_score": 0.4968,
+      "window_mean_anomaly_score": 0.4354,
+      "anomaly_flagged": false,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-DIG19-01",
+      "well_id": "DIG_19",
+      "hazard_type": "Tight Hole Drag",
+      "depth_m": 1820.0,
+      "window_max_anomaly_score": 0.5447,
+      "window_mean_anomaly_score": 0.4713,
+      "anomaly_flagged": false,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-MOR25-01",
+      "well_id": "MOR_25",
+      "hazard_type": "Stuck Pipe",
+      "depth_m": 2240.0,
+      "window_max_anomaly_score": 0.6801,
+      "window_mean_anomaly_score": 0.5358,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-NHK52-01",
+      "well_id": "NHK_52",
+      "hazard_type": "Gas Kick",
+      "depth_m": 2810.0,
+      "window_max_anomaly_score": 0.5789,
+      "window_mean_anomaly_score": 0.4596,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-RUD08-01",
+      "well_id": "RUD_08",
+      "hazard_type": "Lost Circulation",
+      "depth_m": 2480.0,
+      "window_max_anomaly_score": 0.563,
+      "window_mean_anomaly_score": 0.4678,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-RUD15-01",
+      "well_id": "RUD_15",
+      "hazard_type": "High Torque",
+      "depth_m": 2910.0,
+      "window_max_anomaly_score": 0.5125,
+      "window_mean_anomaly_score": 0.4442,
+      "anomaly_flagged": false,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-SIB07-01",
+      "well_id": "SIB_07",
+      "hazard_type": "Wellbore Instability",
+      "depth_m": 1950.0,
+      "window_max_anomaly_score": 0.5869,
+      "window_mean_anomaly_score": 0.4829,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-15923-01",
+      "well_id": "15_9-23",
+      "hazard_type": "Stuck Pipe",
+      "depth_m": 2190.0,
+      "window_max_anomaly_score": 0.7078,
+      "window_mean_anomaly_score": 0.5805,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-1627-01",
+      "well_id": "16_2-7",
+      "hazard_type": "Gas Influx",
+      "depth_m": 1880.0,
+      "window_max_anomaly_score": 0.5659,
+      "window_mean_anomaly_score": 0.4837,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-341016-01",
+      "well_id": "34_10_16",
+      "hazard_type": "Mud Loss",
+      "depth_m": 3100.0,
+      "window_max_anomaly_score": 0.5497,
+      "window_mean_anomaly_score": 0.4543,
+      "anomaly_flagged": false,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-JOR03-01",
+      "well_id": "JOR_03",
+      "hazard_type": "High Torque",
+      "depth_m": 2310.0,
+      "window_max_anomaly_score": 0.5742,
+      "window_mean_anomaly_score": 0.4805,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    },
+    {
+      "incident_id": "INC-DUL104-01",
+      "well_id": "DUL_104",
+      "hazard_type": "Tight Hole Drag",
+      "depth_m": 2235.0,
+      "window_max_anomaly_score": 0.6954,
+      "window_mean_anomaly_score": 0.5485,
+      "anomaly_flagged": true,
+      "retrospective_lead_distance_m": "0 - 25m prior to incident depth"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "model_name": "Geological Formation Classifier (Random Forest)",
+  "target": "ASSAM_FORMATION",
+  "features": [
+    "GR",
+    "RHOB",
+    "NPHI",
+    "DTC",
+    "RDEP",
+    "CALI",
+    "BS"
+  ],
+  "total_samples": 284101,
+  "total_wells": 21,
+  "validation_method": "GroupKFold (5 splits by well_id)",
+  "cv_fold_metrics": [
+    {
+      "fold": 1,
+      "train_wells_count": 16,
+      "val_wells_count": 5,
+      "val_wells": [
+        "DIG_04",
+        "DIG_11",
+        "DUL_88",
+        "DUL_99",
+        "MOR_18"
+      ],
+      "accuracy": 0.9977,
+      "f1_macro": 0.9976
+    },
+    {
+      "fold": 2,
+      "train_wells_count": 17,
+      "val_wells_count": 4,
+      "val_wells": [
+        "34_10_16",
+        "JOR_03",
+        "NHK_45",
+        "SIB_07"
+      ],
+      "accuracy": 0.9981,
+      "f1_macro": 0.9981
+    },
+    {
+      "fold": 3,
+      "train_wells_count": 17,
+      "val_wells_count": 4,
+      "val_wells": [
+        "16_2-7",
+        "DIG_19",
+        "DUL_104",
+        "MOR_25"
+      ],
+      "accuracy": 0.9977,
+      "f1_macro": 0.9977
+    },
+    {
+      "fold": 4,
+      "train_wells_count": 17,
+      "val_wells_count": 4,
+      "val_wells": [
+        "15_9-23",
+        "DUL_92",
+        "MOR_12",
+        "RUD_08"
+      ],
+      "accuracy": 0.998,
+      "f1_macro": 0.9979
+    },
+    {
+      "fold": 5,
+      "train_wells_count": 17,
+      "val_wells_count": 4,
+      "val_wells": [
+        "NHK_52",
+        "NHK_61",
+        "RUD_15",
+        "RUD_22"
+      ],
+      "accuracy": 0.9982,
+      "f1_macro": 0.9982
+    }
+  ],
+  "overall_accuracy": 0.9996,
+  "overall_f1_macro": 0.9996,
+  "classification_report": {
+    "Barail Group": {
+      "precision": 1.0,
+      "recall": 0.9985374149659864,
+      "f1-score": 0.9992681723028746,
+      "support": 58800
+    },
+    "Girujan Clay": {
+      "precision": 0.9993371067258171,
+      "recall": 0.9998979591836735,
+      "f1-score": 0.9996174542857872,
+      "support": 58800
+    },
+    "Kopili Formation": {
+      "precision": 0.9987815969660049,
+      "recall": 1.0,
+      "f1-score": 0.9993904271302856,
+      "support": 58202
+    },
+    "Namsang Formation": {
+      "precision": 0.9997617345723135,
+      "recall": 0.9990476190476191,
+      "f1-score": 0.9994045492437775,
+      "support": 25200
+    },
+    "Sylhet Limestone": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15899
+    },
+    "Tipam Sandstone": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 67200
+    },
+    "accuracy": 0.9995916945030112,
+    "macro avg": {
+      "precision": 0.9996467397106893,
+      "recall": 0.9995804988662131,
+      "f1-score": 0.9996134338271209,
+      "support": 284101
+    },
+    "weighted avg": {
+      "precision": 0.9995920608984684,
+      "recall": 0.9995916945030112,
+      "f1-score": 0.9995916632612816,
+      "support": 284101
+    }
+  }
+}
