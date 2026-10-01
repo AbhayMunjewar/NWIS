@@ -1,7 +1,5 @@
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 class Settings:
     PROJECT_NAME: str = "eRTMAC-NWIS (Nearby Wells Intelligence System)"
     VERSION: str = "1.0.0"
