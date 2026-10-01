@@ -246,7 +246,12 @@ export const AssistantChatMessage: React.FC<Props> = ({ message }) => {
         </div>
 
         {/* Evidence Breakdown Accordion for Assistant Messages */}
-        {!isUser && payload && payload.evidence && payload.evidence_sufficiency !== 'N/A' && (
+        {!isUser && payload && payload.evidence && (
+          (payload.evidence.current_observation?.length > 0) ||
+          (payload.evidence.historical_evidence?.length > 0) ||
+          (payload.evidence.document_evidence?.length > 0) ||
+          (payload.evidence.engineering_interpretation)
+        ) && (
           <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
             <button
               onClick={() => setShowEvidence(!showEvidence)}
