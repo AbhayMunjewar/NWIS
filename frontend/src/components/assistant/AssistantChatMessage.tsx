@@ -227,9 +227,11 @@ export const AssistantChatMessage: React.FC<Props> = ({ message }) => {
               <span className={`px-2 py-0.5 text-[10px] font-extrabold rounded border ${getAnswerTypeBadge(payload.answer_type)}`}>
                 {payload.answer_type}
               </span>
-              <span className="px-2 py-0.5 text-[10px] font-extrabold rounded bg-emerald-100 text-emerald-950 border border-emerald-300">
-                {payload.evidence_sufficiency} EVIDENCE
-              </span>
+              {payload.evidence_sufficiency !== 'N/A' && (
+                <span className="px-2 py-0.5 text-[10px] font-extrabold rounded bg-emerald-100 text-emerald-950 border border-emerald-300">
+                  {payload.evidence_sufficiency} EVIDENCE
+                </span>
+              )}
             </div>
           )}
         </div>
@@ -244,7 +246,7 @@ export const AssistantChatMessage: React.FC<Props> = ({ message }) => {
         </div>
 
         {/* Evidence Breakdown Accordion for Assistant Messages */}
-        {!isUser && payload && payload.evidence && (
+        {!isUser && payload && payload.evidence && payload.evidence_sufficiency !== 'N/A' && (
           <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
             <button
               onClick={() => setShowEvidence(!showEvidence)}
