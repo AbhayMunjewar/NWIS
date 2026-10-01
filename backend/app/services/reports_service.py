@@ -308,7 +308,7 @@ def generate_report(
             })
 
     report_id = f"REP-{time.strftime('%Y%m%d')}-{uuid.uuid4().hex[:4].upper()}"
-    timestamp_iso = time.strftime("%Y-%m-%dT%H:%M:%SZ")
+    timestamp_iso = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
     # Detailed Geological Data Objects for Geologist Role
     geological_details = build_geological_details(well_id, target_well, depth_start, depth_end)
@@ -867,7 +867,7 @@ def create_predrill_report(
     recommended_baselines: Dict[str, Any],
     notes: str
 ) -> Dict[str, Any]:
-    timestamp_iso = time.strftime("%Y-%m-%dT%H:%M:%SZ")
+    timestamp_iso = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     report_id = f"REP-{time.strftime('%Y%m%d')}-{uuid.uuid4().hex[:4].upper()}"
     predrill_id = f"PRE-{well_id}-{uuid.uuid4().hex[:4].upper()}"
 
@@ -925,7 +925,7 @@ def acknowledge_predrill_report(predrill_id: str, engineer_name: str) -> Dict[st
         if p["predrill_id"] == predrill_id:
             p["status"] = "APPROVED_BY_ENGINEER"
             p["acknowledged_by"] = engineer_name
-            p["acknowledged_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ")
+            p["acknowledged_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             return p
     raise ValueError(f"Pre-drill report {predrill_id} not found.")
 
@@ -956,7 +956,7 @@ def create_engineering_solution(
         "outcome": outcome,
         "lessons_learned": lessons_learned,
         "engineer_name": engineer_name,
-        "submitted_at": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "submitted_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "status": "PENDING_MANAGEMENT_REVIEW",
         "management_approved": False,
         "approved_by": None,
@@ -975,7 +975,7 @@ def approve_knowledge_solution(solution_id: str, manager_name: str) -> Dict[str,
             sol["status"] = "APPROVED_AND_INGESTED"
             sol["management_approved"] = True
             sol["approved_by"] = manager_name
-            sol["approved_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ")
+            sol["approved_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             sol["ingested_in_rag"] = True
             
             # Automatically ingest into historical VERIFIED_DOCUMENTS / RAG index!
