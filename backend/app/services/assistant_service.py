@@ -291,10 +291,17 @@ STRICT OPERATIONAL RULES:
         if llm_answer:
             answer = llm_answer
             answer_type = "GROQ_LLM_RAG"
-        else:
+        if not llm_answer:
             answer_type = "RULE_BASED_FALLBACK"
             
-            if any(k in q_lower for k in ["suggestion", "recommend", "mitigate", "action", "what to do", "solution"]):
+            if q_lower.strip() in ["hi", "hello", "hey", "hi!", "hello!", "hey!"]:
+                answer = "Hi! I am your AI Assistant. Do you need any help?"
+                # Clear evidence for simple greetings
+                current_obs = []
+                hist_ev = []
+                doc_ev = []
+                sources = []
+            elif any(k in q_lower for k in ["suggestion", "recommend", "mitigate", "action", "what to do", "solution"]):
                 answer = (
                     f"**Recommended Action for {risk_type} at {depth_m}m:**\n\n"
                     f"Based on historical data for {formation}, the most effective mitigation strategy is to:\n"
@@ -341,22 +348,25 @@ STRICT OPERATIONAL RULES:
                     f"Please ask specifically for **suggestions**, **current data**, **historical incidents**, or **PDF reports** to get more targeted answers from the local dataset!"
                 )
 
+        # Clear evidence entirely if it's just a greeting so the UI doesn't render massive tables
+        is_greeting = q_lower.strip() in ["hi", "hello", "hey", "hi!", "hello!", "hey!"]
+        
         return {
             "query": question,
             "role": role_upper,
             "well_id": well_id,
             "answer_type": answer_type,
             "answer": answer,
-            "evidence_sufficiency": "SUFFICIENT",
+            "evidence_sufficiency": "SUFFICIENT" if not is_greeting else "N/A",
             "evidence": {
-                "current_observation": current_obs,
-                "historical_evidence": hist_ev,
-                "document_evidence": doc_ev,
-                "analytics_output": f"Risk Engine assessed {risk_type} as HIGH severity based on multi-signal correlation",
-                "engineering_interpretation": "Requires human decision-making. High-vis sweep and mud weight verification recommended.",
-                "limitations": limitations
+                "current_observation": current_obs if not is_greeting else [],
+                "historical_evidence": hist_ev if not is_greeting else [],
+                "document_evidence": doc_ev if not is_greeting else [],
+                "analytics_output": f"Risk Engine assessed {risk_type} as HIGH severity based on multi-signal correlation" if not is_greeting else "",
+                "engineering_interpretation": "Requires human decision-making. High-vis sweep and mud weight verification recommended." if not is_greeting else "",
+                "limitations": limitations if not is_greeting else []
             },
-            "sources": sources,
+            "sources": sources if not is_greeting else [],
             "data_freshness": "HISTORICAL LOG DATASET",
             "source_classification": "OIL_AUTHORIZED",
             "timestamp": datetime.now().isoformat(),
