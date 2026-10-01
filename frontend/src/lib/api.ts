@@ -1,7 +1,9 @@
 import type { User, UserRole, WellContextState, SystemInfo } from '../types';
 import { ROLE_DISPLAY_NAMES, ROLE_DEFAULT_LANDING, DEFAULT_RBAC_MATRIX } from './rbac';
 
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+
+export { API_BASE_URL };
 
 export async function loginApi(roleCode: UserRole, username?: string): Promise<{ token: string; user: User }> {
   try {

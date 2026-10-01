@@ -9,7 +9,8 @@ import {
   startDrillingApi,
   escalateAlertApi,
   submitAiReviewApi,
-  fetchReportHistoryApi
+  fetchReportHistoryApi,
+  API_BASE_URL
 } from '../../lib/api';
 import {
   FileText, CheckCircle2, XCircle, Play, AlertTriangle, Bot, ArrowRight,
@@ -73,7 +74,7 @@ export const PreDrillHandoffPanel: React.FC<PreDrillPanelProps> = ({ wellId, rol
 
       // Persist to Reports Workspace DB
       try {
-        await fetch('http://localhost:8000/api/v1/reports/predrill', {
+        const res = await fetch(`${API_BASE_URL}/reports/predrill`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -89,9 +90,14 @@ export const PreDrillHandoffPanel: React.FC<PreDrillPanelProps> = ({ wellId, rol
               safe_mw_max: 1.36,
               torque_threshold_pct: 30
             },
-            notes: finalReportData.executive_summary
+            notes: finalReportData.executive_summary || finalReportData.notes || 'Pre-drill summary notes'
           })
         });
+
+        if (!res.ok) {
+           const errText = await res.text();
+           console.error('Failed to persist pre-drill report to DB:', errText);
+        }
 
         // Store the latest new report ID in sessionStorage so Reports Workspace shows NEW tag
         const updatedHistory = await fetchReportHistoryApi(token || undefined);
