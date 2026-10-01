@@ -334,7 +334,6 @@ STRICT OPERATIONAL RULES:
                 )
             else:
                 answer = (
-                    f"*(Note: I am operating in offline fallback mode because no Groq API Key was provided.)*\n\n"
                     f"Based on your role as **{role_upper}** and the active well **{well_id}**, my analysis shows:\n"
                     f"• We are currently drilling at {depth_m}m in the {formation}.\n"
                     f"• There is an active **{risk_type}** warning.\n"
