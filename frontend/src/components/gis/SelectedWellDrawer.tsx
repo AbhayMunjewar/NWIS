@@ -27,7 +27,7 @@ export const SelectedWellDrawer: React.FC<SelectedWellDrawerProps> = ({
   React.useEffect(() => {
     if (!well) return;
     setLoadingSimilarity(true);
-    fetch(`http://localhost:8000/api/v1/ml/similarity/${well.well_id}`)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/ml/similarity/${well.well_id}`)
       .then(r => r.json())
       .then(data => {
         setSimilarityData(data);

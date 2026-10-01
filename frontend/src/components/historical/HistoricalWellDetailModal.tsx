@@ -46,7 +46,7 @@ export const HistoricalWellDetailModal: React.FC<Props> = ({
       fetchWellLogsApi(wellId, token).then(setLogs);
       fetchWellTrajectoryApi(wellId, token).then(setTrajectory);
       fetchHistoricalComparisonApi(globalWellId, wellId, token).then(setComparison);
-      fetch(`http://localhost:8000/api/v1/ml/similarity/${wellId}`)
+      fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/ml/similarity/${wellId}`)
         .then(r => r.json())
         .then(setSimilarityData)
         .catch(() => {});
@@ -368,7 +368,7 @@ Traceable Source: ${source_traceability?.document || 'WCR Records'} (${source_tr
                           VIEW PDF
                         </button>
                         <a
-                          href={`http://localhost:8000${doc.download_url}`}
+                          href={`${(import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1').replace('/api/v1', '')}${doc.download_url}`}
                           download
                           className="p-2 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 rounded-lg transition-colors shadow-2xs"
                           title="Download Report"

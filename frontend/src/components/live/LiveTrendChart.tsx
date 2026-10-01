@@ -16,7 +16,7 @@ export const LiveTrendChart: React.FC<LiveTrendChartProps> = ({ wellId }) => {
     const fetchTrends = async () => {
       setLoading(true);
       try {
-        const resp = await fetch(`http://localhost:8000/api/v1/live/trends?well_id=${wellId}&time_window=${timeWindow}&max_points=80`);
+        const resp = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/live/trends?well_id=${wellId}&time_window=${timeWindow}&max_points=80`);
         if (resp.ok) {
           const json = await resp.json();
           setData(json);

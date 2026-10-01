@@ -38,7 +38,7 @@ export const TrajectoryModal: React.FC<TrajectoryModalProps> = ({
       setLoading(true);
       setError(null);
       try {
-        const resp = await fetch(`http://localhost:8000/api/v1/gis/wells/${wellId}/trajectory?max_points=120`);
+        const resp = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/gis/wells/${wellId}/trajectory?max_points=120`);
         if (!resp.ok) {
           throw new Error(`HTTP error ${resp.status}`);
         }

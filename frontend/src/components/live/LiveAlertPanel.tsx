@@ -21,7 +21,7 @@ export const LiveAlertPanel: React.FC<LiveAlertPanelProps> = ({
   const handleAck = async (alertId: string) => {
     setAckingId(alertId);
     try {
-      const resp = await fetch(`http://localhost:8000/api/v1/live/alerts/${alertId}/acknowledge?user_name=${roleCode}`, {
+      const resp = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/live/alerts/${alertId}/acknowledge?user_name=${roleCode}`, {
         method: 'POST'
       });
       if (resp.ok) {

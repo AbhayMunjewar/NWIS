@@ -12,7 +12,7 @@ export const PdfViewerModal: React.FC<Props> = ({ document: doc, onClose }) => {
 
   const pdfUrl = doc.download_url.startsWith('http')
     ? doc.download_url
-    : `http://localhost:8000${doc.download_url}`;
+    : `${(import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1').replace('/api/v1', '')}${doc.download_url}`;
 
   return (
     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-6 animate-fade-in">

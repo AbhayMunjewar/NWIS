@@ -36,7 +36,7 @@ export const LiveDrillingDashboard: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch(`http://localhost:8000/api/v1/live/current?well_id=${activeWellId}&role_code=${roleCode}`);
+      const resp = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/live/current?well_id=${activeWellId}&role_code=${roleCode}`);
       if (!resp.ok) {
         throw new Error(`Live telemetry service returned HTTP error ${resp.status}`);
       }

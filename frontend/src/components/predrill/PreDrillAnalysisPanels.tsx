@@ -69,7 +69,7 @@ export const GISNearbyWellsPanel: React.FC<GISPanelProps> = ({ wellId, onComplet
     const loadSim = async () => {
       setLoadingSimilarity(true);
       try {
-        const res = await fetch(`http://localhost:8000/api/v1/ml/similarity/${wellId}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/ml/similarity/${wellId}`);
         if (res.ok) {
           const json = await res.json();
           setSimilarityData(json);

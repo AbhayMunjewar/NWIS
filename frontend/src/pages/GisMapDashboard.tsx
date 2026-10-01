@@ -65,7 +65,7 @@ export const GisMapDashboard: React.FC = () => {
       if (filters.minDepth) params.append('min_depth', filters.minDepth);
       if (filters.maxDepth) params.append('max_depth', filters.maxDepth);
 
-      const resp = await fetch(`http://localhost:8000/api/v1/gis/wells?${params.toString()}`);
+      const resp = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/gis/wells?${params.toString()}`);
       if (!resp.ok) {
         throw new Error(`GIS service returned HTTP error ${resp.status}`);
       }

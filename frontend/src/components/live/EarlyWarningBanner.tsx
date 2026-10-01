@@ -85,7 +85,7 @@ export const EarlyWarningBanner: React.FC<Props> = ({ wellId, roleCode }) => {
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    fetch(`http://localhost:8000/api/v1/ml/early-warnings/${wellId}`)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/ml/early-warnings/${wellId}`)
       .then(r => r.json())
       .then(json => {
         if (!cancelled) {
