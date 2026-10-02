@@ -310,7 +310,17 @@ STRICT OPERATIONAL RULES:
                     f"3. Allow a 4-hour soak time for the pill to act on the reactive Smectite/Illite shale.\n"
                     f"4. Increase mud weight to 1.25 g/cc EMW before resuming drilling operations."
                 )
-            elif any(k in q_lower for k in ["telemetry", "status", "live", "dataset"]):
+            elif any(k in q_lower for k in ["near", "offset", "other well", "nearby"]):
+                answer = (
+                    f"**Offset Wells Near {well_id}:**\n\n"
+                    f"Based on the historical database for the Upper Assam Shelf Basin, here are the closest offset wells with verified records:\n\n"
+                    f"1. **DUL-88** (Distance: 1.2km) - Encountered High Pressure Gas Kick at 2842m.\n"
+                    f"2. **DUL-99** (Distance: 2.4km) - Encountered Severe Lost Circulation at 3210m.\n"
+                    f"3. **DUL-104** (Distance: 3.1km) - Encountered Elevated torque at 2205m.\n"
+                    f"4. **DUL-90** (Distance: 3.8km) - Historical appraisal well.\n"
+                    f"5. **DUL-94** (Distance: 5.2km) - Standard development well."
+                )
+            elif any(k in q_lower for k in ["telemetry", "status", "live data", "dataset"]):
                 answer = (
                     f"**Current Well Telemetry & Status for {well_id}:**\n\n"
                     f"• **Depth**: {depth_m}m (Target: {target_depth}m, {depth_pct}% complete)\n"
@@ -320,16 +330,6 @@ STRICT OPERATIONAL RULES:
                     f"• **WOB**: {wob_v} kN\n"
                     f"• **SPP**: {spp_v} psi\n\n"
                     f"Overall Multivariate ML Status is **{multi_status}**."
-                )
-            elif any(k in q_lower for k in ["near", "offset", "top", "other well", "nearby"]):
-                answer = (
-                    f"**Offset Wells Near {well_id}:**\n\n"
-                    f"Based on the historical database for the Upper Assam Shelf Basin, here are the closest offset wells with verified records:\n\n"
-                    f"1. **DUL-88** (Distance: 1.2km) - Encountered High Pressure Gas Kick at 2842m.\n"
-                    f"2. **DUL-99** (Distance: 2.4km) - Encountered Severe Lost Circulation at 3210m.\n"
-                    f"3. **DUL-104** (Distance: 3.1km) - Encountered Elevated torque at 2205m.\n"
-                    f"4. **DUL-90** (Distance: 3.8km) - Historical appraisal well.\n"
-                    f"5. **DUL-94** (Distance: 5.2km) - Standard development well."
                 )
             elif any(k in q_lower for k in ["pdf", "document", "report", "wcr", "file"]):
                 answer = (
